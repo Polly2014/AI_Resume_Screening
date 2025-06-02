@@ -1,0 +1,69 @@
+# 版本控制
+.git
+.gitignore
+.github
+
+# 环境变量
+.env
+.env.*
+
+# 数据库文件（除非你希望包含初始数据库）
+*.db
+hr_copilot.db
+
+# 日志文件
+logs/
+*.log
+
+# 上传文件（应该作为卷挂载）
+uploads/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+
+# 前端
+frontend/node_modules
+frontend/.pnp
+frontend/.pnp.js
+frontend/coverage
+frontend/build
+
+# 开发工具
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 部署相关
+nginx.conf
+deploy.sh
+docker-compose.yml
+Dockerfile
+.dockerignore
+certbot/
