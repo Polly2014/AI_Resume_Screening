@@ -235,28 +235,26 @@ const AdvancedSearch: React.FC<AdvancedSearchProps> = ({
 
           {/* 高级筛选面板 */}
           {showFilters && showAdvanced && (
-            <div className="advanced-filters animate-slideInRight">
-              <Space direction="vertical" style={{ width: '100%' }} size="middle">
-                {/* 技能筛选 */}
-                <div>
-                  <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500 }}>
-                    技能要求:
-                  </label>
-                  <Select
-                    mode="multiple"
-                    placeholder="选择技能"
-                    value={filters.skills}
-                    onChange={(value) => updateFilter('skills', value)}
-                    style={{ width: '100%' }}
-                    maxTagCount="responsive"
-                    options={commonSkills.map(skill => ({ label: skill, value: skill }))}
-                    allowClear
-                  />
-                </div>
+            <div className="advanced-filters animate-slideInRight">              <Space direction="vertical" style={{ width: '100%' }} size="middle">
+                {/* 所有筛选条件放在同一行 */}
+                <Space style={{ width: '100%' }} wrap>
+                  <div style={{ minWidth: '180px' }}>
+                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500 }}>
+                      技能要求:
+                    </label>
+                    <Select
+                      mode="multiple"
+                      placeholder="选择技能"
+                      value={filters.skills}
+                      onChange={(value) => updateFilter('skills', value)}
+                      style={{ width: '100%' }}
+                      maxTagCount="responsive"
+                      options={commonSkills.map(skill => ({ label: skill, value: skill }))}
+                      allowClear
+                    />
+                  </div>
 
-                {/* 经验和教育 */}
-                <Space style={{ width: '100%' }}>
-                  <div style={{ flex: 1 }}>
+                  <div style={{ minWidth: '150px' }}>
                     <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500 }}>
                       工作经验:
                     </label>
@@ -270,7 +268,7 @@ const AdvancedSearch: React.FC<AdvancedSearchProps> = ({
                     />
                   </div>
                   
-                  <div style={{ flex: 1 }}>
+                  <div style={{ minWidth: '150px' }}>
                     <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500 }}>
                       教育背景:
                     </label>
@@ -283,11 +281,8 @@ const AdvancedSearch: React.FC<AdvancedSearchProps> = ({
                       allowClear
                     />
                   </div>
-                </Space>
 
-                {/* 地区和状态 */}
-                <Space style={{ width: '100%' }}>
-                  <div style={{ flex: 1 }}>
+                  <div style={{ minWidth: '150px' }}>
                     <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500 }}>
                       工作地点:
                     </label>
@@ -298,8 +293,8 @@ const AdvancedSearch: React.FC<AdvancedSearchProps> = ({
                       allowClear
                     />
                   </div>
-                  
-                  <div style={{ flex: 1 }}>
+
+                  <div style={{ minWidth: '150px' }}>
                     <label style={{ display: 'block', marginBottom: '8px', fontWeight: 500 }}>
                       候选人状态:
                     </label>
