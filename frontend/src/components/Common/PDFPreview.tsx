@@ -96,12 +96,14 @@ const PDFPreview: React.FC<PDFPreviewProps> = ({
         top: 20,
         maxWidth: '1200px'
       }}
-      bodyStyle={{
-        padding: 0,
-        height: '80vh',
-        position: 'relative'
+      styles={{
+        body: {
+          padding: 0,
+          height: '80vh',
+          position: 'relative'
+        }
       }}
-      destroyOnClose
+      destroyOnHidden
     >
       <div style={{ 
         width: '100%', 

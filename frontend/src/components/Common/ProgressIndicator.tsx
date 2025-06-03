@@ -145,11 +145,12 @@ const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({
         percent={percent}
         status={status}
         type={type}
-        size={type === 'line' ? (size === 'large' ? 'default' : 'small') : undefined}
+        size={type === 'line' 
+          ? (size === 'large' ? 'default' : 'small') 
+          : size === 'large' ? 8 : size === 'small' ? 4 : 6}
         showInfo={showPercent}
         strokeColor={getProgressColor()}
         trailColor="var(--gray-200)"
-        strokeWidth={type === 'line' ? (size === 'large' ? 8 : size === 'small' ? 4 : 6) : undefined}
         style={{
           transition: 'all var(--transition-base)',
         }}

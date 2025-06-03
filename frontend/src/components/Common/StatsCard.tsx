@@ -37,12 +37,14 @@ const StatsCard: React.FC<StatsCardProps> = ({
         boxShadow: 'rgba(0, 0, 0, 0.03) 0px 3px 8px',
         backdropFilter: 'blur(20px)'
       }}
-      bodyStyle={{ 
-        padding: isMobile ? '10px' : '14px',
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between'
+      styles={{
+        body: { 
+          padding: isMobile ? '10px' : '14px',
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between'
+        }
       }}
     >
       {/* 装饰性渐变条 */}

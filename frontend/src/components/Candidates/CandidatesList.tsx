@@ -324,11 +324,15 @@ const CandidatesList: React.FC = () => {
             value={status}
             style={{ width: '100%', minWidth: '120px' }}
             onChange={(value) => handleStatusChange(record.id, value)}
-            dropdownMatchSelectWidth={false}
+            popupMatchSelectWidth={false}
             listHeight={200}
-            dropdownStyle={{ 
-              minWidth: '160px',
-              maxHeight: '200px'
+            styles={{
+              popup: {
+                root: {
+                  minWidth: '160px',
+                  maxHeight: '200px'
+                }
+              }
             }}
             getPopupContainer={(triggerNode) => triggerNode.parentElement}
           >
@@ -563,7 +567,7 @@ const CandidatesList: React.FC = () => {
             <Select 
               defaultValue="week" 
               style={{ width: 110 }}
-              bordered={false}
+              variant="borderless"
               size={isMobile ? 'small' : 'middle'}
               options={[
                 { value: 'today', label: '今日' },
@@ -571,7 +575,11 @@ const CandidatesList: React.FC = () => {
                 { value: 'month', label: '本月' },
                 { value: 'quarter', label: '本季度' }
               ]}
-              dropdownStyle={{ borderRadius: 'var(--radius-lg)' }}
+              styles={{
+                popup: {
+                  root: { borderRadius: 'var(--radius-lg)' }
+                }
+              }}
             />
           </div>
         </div>
@@ -746,13 +754,15 @@ const CandidatesList: React.FC = () => {
           position: 'relative'
         }}
         className="candidate-list-card"
-        headStyle={{
-          borderBottom: '1px solid rgba(230, 230, 230, 0.6)',
-          padding: '16px 24px'
-        }}
-        bodyStyle={{
-          padding: '0',
-          position: 'relative'
+        styles={{
+          header: {
+            borderBottom: '1px solid rgba(230, 230, 230, 0.6)',
+            padding: '16px 24px'
+          },
+          body: {
+            padding: '0',
+            position: 'relative'
+          }
         }}
       >
         {/* 装饰背景 */}
