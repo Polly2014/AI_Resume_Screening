@@ -35,16 +35,16 @@ app.add_middleware(
 # 静态文件服务
 app.mount("/uploads", StaticFiles(directory="uploads"), name="uploads")
 
-# 前端静态文件服务
+# 包含API路由 - 确保API路由在前端静态文件挂载之前注册
+app.include_router(api_router, prefix="/api")
+
+# 前端静态文件服务 - 放在API路由注册之后
 if os.path.exists("static"):
     app_logger.info("挂载前端静态文件目录")
     app.mount("/", StaticFiles(directory="static", html=True), name="static")
 elif os.path.exists("frontend/build"):
     app_logger.info("挂载前端构建目录")
     app.mount("/", StaticFiles(directory="frontend/build", html=True), name="static")
-
-# 包含API路由
-app.include_router(api_router, prefix="/api")
 
 @app.on_event("startup")
 async def startup_event():

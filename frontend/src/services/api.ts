@@ -97,7 +97,7 @@ export const resumeAPI = {
     });
     
     console.log("发送上传请求到后端");
-    return api.post<UploadResponse>('/resumes/upload/', formData, {
+    return api.post<UploadResponse>('/resumes/upload', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
